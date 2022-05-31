@@ -46,30 +46,37 @@
     <div class="col d-flex justify-content-center">
       <div class="parte-inferior ">
         <div class="abajo-izq">
-          <div class="puntos-negros" style="margin-top:40px;">
+          <div class="circulo-negro" style="margin-top:45px;">
+            <div class="d-flex justify-content-center" style="margin-top:10px;">
+              <div class="cuadrado-gris"></div>
+            </div>
             <div class="d-flex justify-content-center">
-              <div class="punto-negro"></div>
+              <div class="rectangulo-gris"></div>
             </div>
-            <div class="d-flex justify-content-evenly puntos-negros-centro">
-              <div class="punto-negro"></div>
-              <div class="punto-negro"></div>
-            </div>
-            <div class="d-flex justify-content-center puntos-negros-centro">
-              <div class="punto-negro"></div>
+            <div class="d-flex justify-content-center">
+              <div class="cuadrado-gris"></div>
             </div>
           </div>
         </div>
-        <div class="arriba-der">
-          <div class="barra-pantalla"></div>
+        <div class="abajo-der">
+          <div class="barra-pantalla" style="width:15%; margin-left:-10px; border-left-style:none;"></div>
           <div class="contorno-pantalla d-flex justify-content-center align-items-center">
             <div class="pantalla d-flex justify-content-center align-items-center">
-              <img src="<%= @pokemon.imagen %>" class="img-fluid">
+              <div class="card">
+                <div class="card-body" style="max-height:224.27px; max-width:264.14px; font-size:13px;">
+                  <p class="card-text">Peso: <%= @pokemon.peso %>Kg</p>
+                  <p class="card-text">Altura: <%= @pokemon.altura %>m</p>
+                  <p class="card-text">Tipos: <% @pokemon.tipos.each do |tipo| %> <%= "#{tipo.tipo}," %> <% end %></p>
+                  <p class="card-text">Habilidades: <% @pokemon.habilidades.each do |habilidad| %> <%= "#{habilidad.habilidad}," %> <% end %></p>
+                  <p class="card-text">Debilidades: <% @pokemon.debilidades.each do |debilidad| %> <%= "#{debilidad.tipo}," %> <% end %></p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="barra-pantalla d-flex justify-content-center align-items-center">
-            <div class="punto-negro"></div>
+          <div class="barra-pantalla d-flex flex-column justify-content-end align-items-center ">
+            <div class="punto-gris"></div>
+            <div class="punto-gris"></div>
           </div>
-          
         </div>
       </div>
     </div>

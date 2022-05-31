@@ -30,15 +30,37 @@ class SaveData
         poke['type'].each do |tipo|
           tipo_es = traducir_nombre(tipo)
           poke_tipo = Tipo.find_by(tipo: tipo_es)
-          tipos_array << { pokemon_id: pokemon.id, tipo_id: poke_tipo.id }
+          count = 0
+          cond = true
+          tipos_array.each do |ar|
+            if ar[:pokemon_id] == pokemon.id
+              count += 1
+            end
+            if ar[:pokemon_id] == pokemon.id && poke_tipo.id == ar[:tipo_id]
+              cond = false
+            end
+          end
+          tipos_array << { pokemon_id: pokemon.id, tipo_id: poke_tipo.id } if count < 2 && cond
         end
         poke['abilities'].each do |h|
+          cond = true
           habilidad = Habilidad.find_by(habilidad: h)
-          habilidades_array << { pokemon_id: pokemon.id, habilidad_id: habilidad.id }
+          habilidades_array.each do |i|
+            if i[:pokemon_id] == pokemon.id && i[:habilidad_id] == habilidad.id
+              cond = false
+            end
+          end
+          habilidades_array << { pokemon_id: pokemon.id, habilidad_id: habilidad.id } if cond
         end
         poke['weakness'].each do |w|
+          cond = true
           debilidad = Tipo.find_by(tipo: w)
-          debilidades_array << { pokemon_id: pokemon.id, tipo_id: debilidad.id }
+          debilidades_array.each do |i|
+            if i[:pokemon_id] == pokemon.id && i[:tipo_id] == debilidad.id
+              cond = false
+            end
+          end
+          debilidades_array << { pokemon_id: pokemon.id, tipo_id: debilidad.id } if cond
         end
       end
       PokemonesTipo.insert_all(tipos_array)

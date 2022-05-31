@@ -12,19 +12,20 @@ $verde: #52AE5F;
   display: flex;
 }
 
+
 .arriba-izq{
   align-self: center;
   background: $rojo;
   border-color: $negro;
-  border-radius: 90px;
+  border-radius: 219px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   border-style: solid;
   border-width: 3px;
-  height: 150px;
+  height: 219px;
   margin-left: -40px;
   margin-right: -13px;
-  width: 150px;
+  width: 219px;
 }
 
 .arriba-der{
@@ -37,10 +38,42 @@ $verde: #52AE5F;
   border-style: solid;
   border-width: 3px;
   display: flex;
-  height: 180px;
+  height: 320px;
   justify-content: center;
   margin-left: -25px;
-  width: 230px;
+  width: 400px;
+}
+
+.abajo-izq{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  background: $gris_oscuro;
+  border-color: $negro;
+  border-radius: 219px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-style: solid;
+  border-width: 3px;
+  height: 219px;
+  margin-left: -40px;
+  margin-right: -13px;
+  width: 219px;
+}
+.abajo-der{
+  align-items: center;
+  background: $rojo;
+  border-color: $negro;
+  border-left-color: #DC0A2D;
+  border-bottom-color: $rojo;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 3px;
+  display: flex;
+  height: 320px;
+  justify-content: center;
+  margin-left: -25px;
+  width: 400px;
 }
 
 .punto-negro{
@@ -50,7 +83,7 @@ $verde: #52AE5F;
   width: 15px;
 }
 .puntos-negros-centro{
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 .contorno-pantalla{
@@ -86,7 +119,7 @@ $verde: #52AE5F;
 }
 .relleno-medio{
   height: 20px;
-  width: 72px;
+  width: 141px;
 }
 
 .parte-medio-grande{
@@ -95,8 +128,8 @@ $verde: #52AE5F;
   border-color: $negro;
   border-width: 1px;
   border-style: solid;
-  height: 20px;
-  width: 116px;
+  height: 30px;
+  width: 220px;
 }
 
 .parte-medio-pequeña{
@@ -105,6 +138,35 @@ $verde: #52AE5F;
   border-color: $negro;
   border-width: 1px;
   border-style: solid;
-  height: 20px;
-  width: 57px;
+  height: 30px;
+  width: 90px;
+}
+
+.cuadrado-gris{
+  background-color: $gris_claro;
+  height: 30px;
+  width: 30px;
+}
+
+.circulo-negro{
+  border-radius: 120px;
+  border-color: $negro;
+  border-width: 2px;
+  border-style: solid;
+  height: 120px;
+  width: 120px;
+}
+
+.rectangulo-gris{
+  background-color: $gris_claro;
+  height: 30px;
+  width: 90px;
+}
+
+.punto-gris{
+  background:$gris_claro;
+  margin-bottom: 20px;
+  border-radius: 25px;
+  height: 15px;
+  width: 15px;
 }
