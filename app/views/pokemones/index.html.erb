@@ -1,0 +1,65 @@
+<% if Pokemon.count.zero? %>
+  <div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="row">
+      <div class="col d-flex justify-content-center">
+        <h1>No hay datos de pokemones :(</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col col d-flex justify-content-center">
+        <form action="/no_data" method="get">
+          <button type="submit" class="btn btn-primary">Obtener datos</button>
+        </form>
+      </div>
+    </div>
+  </div>
+<% elsif @pokemones.count.zero? %>
+  <div class="container position-absolute top-50 start-50 translate-middle">
+    <div class="row">
+      <div class="col-12 d-flex justify-content-center">
+        <h1>No se encontro ningun pokémon de nombre <%= params[:search_by_name] %> :(</h1>
+      </div>
+      <div class="col-12 d-flex justify-content-center">
+        <img src="https://external-preview.redd.it/wPndPpFBezagd2G-xadIvbMDZJC_QZWDR4JLD7IiDKs.gif?format=png8&s=e9e50cab402009d1d128ffac46a43cf2d86e42c5">
+      </div>
+    </div>
+  </div>
+<% else %>
+  <div class= "container mb-3">
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <div class="d-flex justify-content-center">
+          <%= form_tag "/", method: "GET", class:'form-inline' do %>
+            <div class="input-group">
+              <%= text_field_tag :search_by_name, params[:search_by_name], class: 'form-control', placeholder: 'Buscar por nombre' %>
+              <%= submit_tag "buscar", class: 'btn btn-primary' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center row-cols-1 row-cols-sm-3 row-cols-md-3 row-cols-lg-4 g-5">
+      <% @pokemones.each do |pokemon| %>
+        <div class="col">
+          <div class="d-flex justify-content-center">
+            <a href="/detalles/<%= pokemon.id %>" class="text-decoration-none text-reset">
+              <div class="card shadow p-3 mb-5 bg-body rounded" style="width: 240px;">
+                <img src="<%= pokemon.imagen %>" class="card-img-top" alt="<%= pokemon.nombre %>-imagen">
+                <div class="card-body d-flex justify-content-center">
+                  <h5 class="card-title"><%= pokemon.nombre %> - <%= pokemon.numero %></h5>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <div class="d-flex justify-content-center">
+      <%= paginate @pokemones %>
+    </div>
+  </div>
+<% end %>

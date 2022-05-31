@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CodeTest</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  </head>
+
+  <body style="background-color: #174290;">
+  <div class="container">
+    <div class="row">
+      <div class="d-flex justify-content-center">
+        <a href="<%= root_path %>" >
+          <img class="img-fluid" style="width:600px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/1200px-International_Pok%C3%A9mon_logo.svg.png" alt="logo pokemon">
+        </a>
+      </div>
+    </div>
+  </div>
+    <%= yield %>
+  </body>
+</html>

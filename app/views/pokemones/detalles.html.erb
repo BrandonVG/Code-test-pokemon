@@ -1,0 +1,77 @@
+<%= stylesheet_link_tag 'detalle', media: 'all'%>
+<div class="container mt-5" >
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="parte-superior ">
+        <div class="arriba-izq">
+          <div class="puntos-negros" style="margin-top:40px;">
+            <div class="d-flex justify-content-center">
+              <div class="punto-negro"></div>
+            </div>
+            <div class="d-flex justify-content-evenly puntos-negros-centro">
+              <div class="punto-negro"></div>
+              <div class="punto-negro"></div>
+            </div>
+            <div class="d-flex justify-content-center puntos-negros-centro">
+              <div class="punto-negro"></div>
+            </div>
+          </div>
+        </div>
+        <div class="arriba-der">
+          <div class="barra-pantalla"></div>
+          <div class="contorno-pantalla d-flex justify-content-center align-items-center">
+            <div class="pantalla d-flex justify-content-center align-items-center">
+              <img src="<%= @pokemon.imagen %>" class="img-fluid">
+            </div>
+          </div>
+          <div class="barra-pantalla d-flex justify-content-center align-items-center">
+            <div class="punto-negro"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class= "col d-flex justify-content-center">
+      <div class="parte-medio">
+        <div class="relleno-medio"></div>
+        <div class="parte-medio-pequeña"></div>
+        <div class="parte-medio-grande"></div>
+        <div class="parte-medio-pequeña"></div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col d-flex justify-content-center">
+      <div class="parte-inferior ">
+        <div class="abajo-izq">
+          <div class="puntos-negros" style="margin-top:40px;">
+            <div class="d-flex justify-content-center">
+              <div class="punto-negro"></div>
+            </div>
+            <div class="d-flex justify-content-evenly puntos-negros-centro">
+              <div class="punto-negro"></div>
+              <div class="punto-negro"></div>
+            </div>
+            <div class="d-flex justify-content-center puntos-negros-centro">
+              <div class="punto-negro"></div>
+            </div>
+          </div>
+        </div>
+        <div class="arriba-der">
+          <div class="barra-pantalla"></div>
+          <div class="contorno-pantalla d-flex justify-content-center align-items-center">
+            <div class="pantalla d-flex justify-content-center align-items-center">
+              <img src="<%= @pokemon.imagen %>" class="img-fluid">
+            </div>
+          </div>
+          <div class="barra-pantalla d-flex justify-content-center align-items-center">
+            <div class="punto-negro"></div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
